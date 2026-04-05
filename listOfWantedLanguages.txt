@@ -6,7 +6,7 @@ Swift (done)
 Kotlin (done)
 Rust (done)
 Go (done)
-Ruby
+Ruby (done)
 PHP
 Scala
 Dart
