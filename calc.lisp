@@ -1,0 +1,38 @@
+(defun main ()
+  (format t "what maths do you want to do? (1=+ 2=- 3=* 4=/)~%")
+  (let ((mathtype (string-trim '(#\Space #\Newline #\Return) (read-line))))
+
+    (if (string= mathtype "1") ; addition
+      (let ((num1 0) (num2 0) (ans1 0))
+        (format t "whats the first number you want to add?~%")
+        (setf num1 (parse-integer (string-trim '(#\Space #\Newline #\Return) (read-line))))
+        (format t "whats the number you want to add to that?~%")
+        (setf num2 (parse-integer (string-trim '(#\Space #\Newline #\Return) (read-line))))
+        (setf ans1 (+ num1 num2))
+        (format t "the answer is: ~a" ans1))
+    (if (string= mathtype "2") ; subtraction
+      (let ((num1 0) (num2 0) (ans1 0))
+        (format t "whats the first number?~%")
+        (setf num1 (parse-integer (string-trim '(#\Space #\Newline #\Return) (read-line))))
+        (format t "whats the number you want to subtract to that?~%")
+        (setf num2 (parse-integer (string-trim '(#\Space #\Newline #\Return) (read-line))))
+        (setf ans1 (- num1 num2))
+        (format t "the answer is: ~a" ans1))
+    (if (string= mathtype "3") ; times
+      (let ((num1 0) (num2 0) (ans1 0))
+        (format t "whats the first number?~%")
+        (setf num1 (parse-integer (string-trim '(#\Space #\Newline #\Return) (read-line))))
+        (format t "whats the number you want to times by?~%")
+        (setf num2 (parse-integer (string-trim '(#\Space #\Newline #\Return) (read-line))))
+        (setf ans1 (* num1 num2))
+        (format t "the answer is: ~a" ans1))
+    (if (string= mathtype "4") ; devide
+      (let ((num1 0) (num2 0) (ans1 0))
+        (format t "whats the first number?~%")
+        (setf num1 (parse-integer (string-trim '(#\Space #\Newline #\Return) (read-line))))
+        (format t "whats the number you want to devide by?~%")
+        (setf num2 (parse-integer (string-trim '(#\Space #\Newline #\Return) (read-line))))
+        (setf ans1 (truncate num1 num2))
+        (format t "the answer is: ~a" ans1)))))))
+
+(main)
